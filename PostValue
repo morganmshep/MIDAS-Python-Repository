@@ -1,0 +1,25 @@
+import base64
+import requests
+import json 
+import os 
+import sys 
+
+# Assumes there is a file on the local filesystem that is correctly formatted against the XML schema in this document
+def PostPrices(token, priceFileName):
+
+    headers = {'accept': 'application/json', 'Content-Type': 'text/xml', 'Authorization': "Bearer " + token}
+    url = 'https://cecwats2.org/api/ValueData'
+    priceFile = open(priceFileName) 
+    xml = priceFile.read()
+    pricing_response = requests.post(url, data=xml, headers=headers)
+
+    return (pricing_response.text)
+
+# Uses the GetToken implementation from above in this document
+token = GetToken('your_username_here','your_password_here')
+
+# assumes properly formatted file in same directory as this python script
+ret = PostPrices( token, 'your_midas_post_price_example.xml' )
+
+# A response like "<N> Rate Model(s) added to MIDAS system." Should be received
+print(ret)

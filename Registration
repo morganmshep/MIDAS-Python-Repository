@@ -21,7 +21,7 @@ emailaddress = "your_email_here"
 email_encodedBytes = base64.b64encode(emailaddress.encode("utf-8"))
 emailaddress64 = str(email_encodedBytes, "utf-8")
 
-fullname = "your_email_here"
+fullname = "your_fullname_here"
 fullname_encodedBytes = base64.b64encode(fullname.encode("utf-8"))
 fullname64 = str(fullname_encodedBytes, "utf-8")
 

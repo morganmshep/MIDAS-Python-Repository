@@ -29,7 +29,7 @@ fullname64 = str(fullname_encodedBytes, "utf-8")
 #Put together the dict for the JSON payload
 registration_info = {"organization":organization64,"username":username64,"password":password64,"emailaddress":emailaddress64,"fullname":fullname64}
 
-url = 'https://cecwats2.org/api/registration'
+url = 'https://midasapi.energy.ca.gov/api/registration'
 headers =  {"Content-Type":"application/json"}
 
 response = requests.post(url, data=json.dumps(registration_info), headers=headers)

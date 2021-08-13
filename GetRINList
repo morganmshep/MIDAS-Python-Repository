@@ -8,6 +8,6 @@ import json
 
 def GetRINList(token, signaltype):
     headers = {'accept': 'application/json', 'Authorization': "Bearer " + token}
-    url = 'https://cecwats2.org/api/valuedata?signaltype=' + signaltype
+    url = 'https://midasapi.energy.ca.gov/api/valuedata?signaltype=' + signaltype
     list_response = requests.get(url, headers=headers)
     return (json.loads(list_response.text))

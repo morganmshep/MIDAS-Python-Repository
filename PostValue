@@ -8,7 +8,7 @@ import sys
 def PostValues(token, priceFileName):
 
     headers = {'accept': 'application/json', 'Content-Type': 'text/xml', 'Authorization': "Bearer " + token}
-    url = 'https://cecwats2.org/api/ValueData'
+    url = 'https://midasapi.energy.ca.gov/api/ValueData'
     priceFile = open(priceFileName) 
     xml = priceFile.read()
     pricing_response = requests.post(url, data=xml, headers=headers)

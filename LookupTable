@@ -1,6 +1,6 @@
 def LookupTable(token, LookupTable):
     headers = {'accept': 'application/json', 'Authorization': "Bearer " + token}
-    url = 'https://cecwats2.org/api/valuedata?' + 'LookupTable=' + LookupTable
+    url = 'https://midasapi.energy.ca.gov/api/valuedata?' + 'LookupTable=' + LookupTable
     pricing_response = requests.get(url, headers=headers)
     response = requests.get(url,headers=headers)
     print(response) ##Added to function to get 200 response## 

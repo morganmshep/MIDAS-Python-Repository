@@ -8,4 +8,4 @@ def LookupTable(token, LookupTable):
     
 #Lookup Tables:
 
-#['Country', 'Daytype', 'Distribution', 'Enduse', 'Energy', 'Location', 'Ratetype', 'Sector', 'State', 'TimeZone']
+#['Country', 'Daytype', 'Distribution', 'Enduse', 'Energy', 'Location', 'Ratetype', 'Sector', 'State', 'TimeZone', 'Unit']

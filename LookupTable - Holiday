@@ -1,0 +1,10 @@
+def LookupTable(token):
+    
+    headers = {'accept': 'application/json', 'Authorization': "Bearer " + token}
+    url = 'https://midasapi.energy.ca.gov/api/holiday'
+    
+    pricing_response = requests.get(url, headers=headers)
+    response = requests.get(url,headers=headers)
+    print(response) ##Added to function to get 200 response##
+    
+    return (json.loads(pricing_response.text))

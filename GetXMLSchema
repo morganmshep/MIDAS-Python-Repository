@@ -1,0 +1,11 @@
+import requests
+import json
+
+#Query passes in JWT access token as "token"
+
+def GetValue(token):
+    headers = {'accept': 'application/json', 'Authorization': "Bearer " + token}
+    url = 'https://midasapi.energy.ca.gov/api/valuedata'
+    pricing_response = requests.get(url, headers=headers)
+
+    return (json.loads(pricing_response.text))

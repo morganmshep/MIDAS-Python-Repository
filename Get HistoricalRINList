@@ -1,0 +1,8 @@
+#query passes in JWT access token as "token", distributioncode and energycodes formatted as 2-character strings found in each lookup table 
+
+def GetHistoryRINs(token, DistributionCode, EnergyCode):
+
+    headers = {'accept': 'application/json', 'Authorization': "Bearer " + token}
+    url = 'http://midasapi.energy.ca.gov/api/historicallist?' + 'DistributionCode=' + DistributionCode + '&EnergyCode=' + EnergyCode
+    list_response = requests.get(url, headers=headers)
+    return (json.loads(list_response.text))

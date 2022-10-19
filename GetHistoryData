@@ -1,0 +1,7 @@
+def GetHistoryData(token, rateID, startdate, enddate):
+
+    headers = {'accept': 'application/json', 'Authorization': "Bearer " + token}
+    url = 'http://midasapi.energy.ca.gov/api/historicaldata?id=' + rateID + '&startdate=' + startdate + '&enddate=' + enddate
+
+    list_response = requests.get(url, headers=headers)
+    return (json.loads(list_response.text))
